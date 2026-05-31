@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Painting Contractors | BN Reddy Nagar & Gurramguda</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css for Premium Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    
+    <style>
+    /* 📸 Hover Effects for Professional Look */
+.work-box {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: var(--pure-white);
+    overflow: hidden;
+    /* ये स्मूथ एनिमेशन के लिए है */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.work-box:hover {
+    transform: translateY(-12px) scale(1.02); /* ऊपर उठेगा और हल्का ज़ूम होगा */
+    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.2); /* गोल्डन शेडो आएगी */
+    border-color: var(--brand-gold);
+}
+
+.work-box img {
+    height: 260px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.6s ease; /* फोटो का स्मूथ ज़ूम */
+}
+
+.work-box:hover img {
+    transform: scale(1.1); /* फोटो अंदर ज़ूम होगी */
+}
+
+/* 🌀 पूरी वेबसाइट के सेक्शन एंट्री के लिए */
+.animate__animated {
+    --animate-duration: 1s;
+}
+
+        :root {
+            --primary-dark: #0f172a; 
+            --brand-gold: #d97706; 
+            --text-main: #1e293b;
+            --pure-white: #ffffff;
+            --light-bg: #f8fafc;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-main);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            text-transform: capitalize;
+            color: var(--primary-dark);
+        }
+        
+        /* 🖌️ Premium Navbar Styling */
+        .bg-primary-custom {
+            background-color: var(--primary-dark) !important;
+            border-bottom: 3px solid var(--brand-gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .navbar-brand {
+            color: var(--pure-white) !important;
+            font-size: 1.8rem !important;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .navbar-brand span {
+            color: var(--brand-gold);
+        }
+        .logo-icon {
+            color: var(--brand-gold);
+            display: inline-block;
+            animation: rollerSwing 3s infinite ease-in-out;
+        }
+        @keyframes rollerSwing {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(12deg); }
+        }
+
+        /* 🚀 Clean & Elegant Hero Section (Fixed Text Overlap) */
+        .hero-section {
+            background-color: var(--pure-white);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 2.3rem; /* एकदम परफेक्ट और हल्का साइज मोबाइल के लिए */
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.3;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+        }
+        .hero-section h1 span {
+            color: var(--brand-gold);
+            background: linear-gradient(120deg, rgba(217, 119, 6, 0.1) 0%, rgba(217, 119, 6, 0.15) 100%);
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+        .hero-section .lead {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #64748b;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+        
+        /* ⚡ Premium Action Buttons */
+        .btn-warning-custom {
+            background-color: var(--brand-gold);
+            color: var(--pure-white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 14px 30px;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+        }
+        .btn-warning-custom:hover {
+            transform: translateY(-2px);
+            background-color: #b45309;
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+        }
+        .btn-whatsapp-custom {
+            background-color: #16a34a;
+            color: var(--pure-white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 14px 30px;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(22, 163, 74, 0.25);
+        }
+        .btn-whatsapp-custom:hover {
+            transform: translateY(-2px);
+            background-color: #15803d;
+            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
+        }
+
+        /* 📽️ Video Section Styling (Matches 16128.jpg Screen Layout) */
+        .video-section {
+            background-color: #0f172a;
+            border-top: 4px solid var(--brand-gold);
+            border-bottom: 4px solid var(--brand-gold);
+        }
+        .video-box {
+            border: 2px solid #334155;
+            border-radius: 14px;
+            background: #020617;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+            max-width: 400px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+        .video-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-gold);
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* 📸 Photo Gallery Layout & Modern Hover Cards */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+        .work-box {
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            background: var(--pure-white);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+        .work-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--brand-gold);
+        }
+        .work-box img {
+            height: 260px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .badge-category {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 10;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        /* 📝 Lead Generation Contact Form Section */
+        .form-section {
+            background-color: #f1f5f9;
+        }
+        .contact-card {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .form-control {
+            padding: 12px 18px;
+            border-radius: 10px;
+            border: 2px solid #cbd5e1;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: var(--brand-gold);
+            box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.15);
+        }
+        .btn-submit {
+            background: var(--primary-dark);
+            color: var(--pure-white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 14px;
+            border-radius: 10px;
+            width: 100%;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-submit:hover {
+            background: var(--brand-gold);
+            transform: translateY(-1px);
+        }
+
+        /* 🏢 Premium Footer Styling */
+        footer {
+            background-color: var(--primary-dark);
+            color: #94a3b8;
+            border-top: 4px solid var(--brand-gold);
+        }
+        footer h5 {
+            color: var(--pure-white);
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--brand-gold);
+        }
+        .footer-bottom {
+            background-color: #0b1329;
+            padding: 15px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom sticky-top py-2">
+        <div class="container">
+            <a class="navbar-brand fw-bold animate__animated animate__fadeInLeft" href="#">
+                <i class="fa-solid fa-paint-roller logo-icon me-2"></i>Rohit <span>Painting</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Clean Hero Section -->
+    <section class="hero-section">
+        <div class="container px-3">
+            <span class="badge bg-danger mb-3 px-3 py-2 text-uppercase fw-bold animate__animated animate__fadeInDown" style="font-size: 0.75rem; letter-spacing: 1px;">Top Rated Contractor</span>
+            <h1 class="animate__animated animate__fadeInUp">Apne Ghar Ko De Ek <span>Premium</span> Aur <span>Modern</span> Look</h1>
+            <p class="lead animate__animated animate__fadeInUp">BN Reddy Nagar, Gurramguda Aur Poore Hyderabad Mein Best Quality Wall Putty, Texture Aur Luxury Painting Services.</p>
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center animate__animated animate__zoomIn">
+                <a href="tel:9305865824" class="btn btn-warning-custom"><i class="fa-solid fa-phone me-2"></i>Call: 9305 865 824</a>
+                <a href="https://wa.me/919305865824" target="_blank" class="btn btn-whatsapp-custom"><i class="fa-brands fa-whatsapp me-2"></i>WhatsApp Chat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📽️ Live Work Videos Section -->
+    <section class="video-section py-5">
+        <div class="container">
+            <div class="text-center mb-5 text-white">
+                <h2 class="text-white" style="font-size: 2rem; font-weight: 800;">Humare Kaam Ka Live Video Walkthrough</h2>
+                <div class="mx-auto bg-warning my-3" style="height: 3px; width: 60px;"></div>
+                <p class="fs-6 opacity-75">रोहित पेंटिंग कॉन्ट्रैक्टर द्वारा पूरे किए गए साइट वर्क का असली वीडियो रिव्यू</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- 🎥 वीडियो 1 -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="card video-box position-relative">
+                        <span class="badge bg-danger badge-category text-white"><i class="fa-solid fa-play me-1"></i> Site Work Video 1</span>
+                        <div class="video-container">
+                            <video controls preload="metadata">
+                                <source src="VID20260312154419.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="card-body p-4 bg-dark text-white">
+                            <h4 class="fw-bold mb-2 text-warning fs-5">Interior Wall Smoothing & Gloss Work</h4>
+                            <p class="text-light mb-0 opacity-75" style="font-size: 0.9rem;">इस वीडियो में कमरे और किचन एरिया की दीवारों की फिनिशिंग, प्राइमर बेस और लग्जरी वाशबल पेंट की चमक को करीब से देखें।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎥 वीडियो 2 -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="card video-box position-relative">
+                        <span class="badge bg-danger badge-category text-white"><i class="fa-solid fa-play me-1"></i> Site Work Video 2</span>
+                        <div class="video-container">
+                            <video controls preload="metadata">
+                                <source src="VID20260312154458.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="card-body p-4 bg-dark text-white">
+                            <h4 class="fw-bold mb-2 text-warning fs-5">Complete 4 Flats Handover & Stencil Wall Design</h4>
+                            <p class="text-light mb-0 opacity-75" style="font-size: 0.9rem;">इस वीडियो में हमारे द्वारा तैयार किए गए 4 फ्लैट्स का पूरा लुक, खूबसूरत वॉल स्टेंसिल डिजाइन, शेल्व्स पेंटिंग और डोर्स की पॉलिश वर्क देखें।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📸 Photo Gallery Section -->
+    <section id="gallery" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Humare Premium Projects (10 Samples)</h2>
+                <div class="mx-auto bg-warning my-3" style="height: 3px; width: 60px;"></div>
+                <p class="fs-6 text-muted">BN Reddy Nagar aur Gurramguda mein kiye gaye asli work snapshots</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Sample 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-success badge-category">Exterior Paint</span>
+                        <img src="final work first.jpg" alt="Final Work First">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Premium Elevation Finish</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Makan ke bahar ka final weather-shield layer behtareen coloring ke sath.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-primary badge-category">Interior Paint</span>
+                        <img src="andar paint complete.jpg" alt="Andar Paint Complete">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Luxury Interior Room Finish</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Andar ke kamre ka final rich clean look perfect glossy finishing ke sath.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-success badge-category">Exterior Paint</span>
+                        <img src="Bahar ka elevation.jpg" alt="Bahar Ka Elevation">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Outside Side Elevation</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Makan ke bahar ka final top border lining and exterior paint coating.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 4 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-success badge-category">Exterior Paint</span>
+                        <img src="outside texture.jpg" alt="Outside Texture">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Front Wall Scratch Texture</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Elevation deewar par premium modern scratch texture design look.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 5 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-success badge-category">Exterior Paint</span>
+                        <img src="elevation design.jpg" alt="Elevation Design">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Multi-Floor Building Process</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Poore bade building par machaan lagakar double layer coating ka kaam.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 6 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-primary badge-category">Interior Paint</span>
+                        <img src="iron step.jpg" alt="Iron Step">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Spiral Iron Mesh Painting</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Lohe ki ghumavdar cd (spiral stairs) par anti-rust primer coating.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 7 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-success badge-category">Exterior Paint</span>
+                        <img src="shutter.jpg" alt="Shutter">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Shutter & Shop Front Paint</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Commercial shop front area and iron shutter gloss coat.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 8 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-success badge-category">Exterior Paint</span>
+                        <img src="outside painting.jpg" alt="Outside Painting">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Staircase Putty & Blue Finish</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Jeene (stairs) ke paas ki deewaron par perfect wall putty lining finish.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 9 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-success badge-category">Exterior Paint</span>
+                        <img src="elevation lappan putti.jpg" alt="Elevation Lappan Putti">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Elevation Groove Lining Stage</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Outer surface wall par cement border finishing and groove preparation.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sample 10 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card work-box position-relative">
+                        <span class="badge bg-primary badge-category">Interior Paint</span>
+                        <img src="ceiling primer.jpg" alt="Ceiling Primer">
+                        <div class="card-body p-3">
+                            <h4 class="fw-bold mb-1 fs-5">Ceiling Putty Work</h4>
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">Kamre ki chhat aur galli area par putty primer lagane ka shुरुआती kaam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📝 Get A Quote Lead Form Section -->
+    <section class="form-section py-5" id="book-now">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="contact-card">
+                        <div class="text-center mb-4">
+                            <h3 class="fw-bold text-dark fs-3">Muft Estimate Paane Ke Liye Details Bharein</h3>
+                            <p class="text-muted" style="font-size: 0.95rem;">अपनी डिटेल्स सबमिट करें, यह सीधे रोहित भाई के पास व्हाट्सएप पर पहुंच जाएगी।</p>
+                        </div>
+                        
+                        <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Aapka Naam (Name)</label>
+                                <input type="text" id="clientName" class="form-control" placeholder="Apna poora naam likhein" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Mobile Number</label>
+                                <input type="tel" id="clientPhone" class="form-control" placeholder="Apna phone number daalein" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Aapka Pata (Address/Location)</label>
+                                <textarea id="clientAddress" class="form-control" rows="3" placeholder="Ghar ka pata ya area ka naam daalein" required></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Kaam Ka Prakar (Work Type)</label>
+                                <select id="workType" class="form-control">
+                                    <option value="Interior Painting">Andar Ka Painting Kaam (Interior)</option>
+                                    <option value="Exterior Painting">Bahar Ka Painting Kaam (Exterior)</option>
+                                    <option value="Wall Putty & Texture">Wall Putty / Texture Design</option>
+                                    <option value="Full House Painting">Poore Ghar Ka Full Paint Work</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane me-2"></i>Submit Details via WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🏢 Professional Footer Section -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-warning"><i class="fa-solid fa-paint-roller me-2"></i>Rohit Painting</h5>
+                    <p class="text-light opacity-75" style="font-size: 0.9rem;">Hum BN Reddy Nagar, Gurramguda aur poore Hyderabad mein gharon aur commercial spaces ko premium look dene ka kaam karte hain.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Humari Services</h5>
+                    <ul class="list-unstyled" style="font-size: 0.9rem;">
+                        <li><a href="#gallery"><i class="fa-solid fa-check text-warning me-2 mb-2"></i>Luxury Interior Painting</a></li>
+                        <li><a href="#gallery"><i class="fa-solid fa-check text-warning me-2 mb-2"></i>Weather-Shield Exterior Paint</a></li>
+                        <li><a href="#gallery"><i class="fa-solid fa-check text-warning me-2 mb-2"></i>Premium Wall Putty & Texture</a></li>
+                        <li><a href="#gallery"><i class="fa-solid fa-check text-warning me-2 mb-2"></i>Wood & Door Polish Work</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Sampark Karein</h5>
+                    <p class="mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-location-dot text-warning me-2"></i> BN Reddy Nagar & Gurramguda, Hyderabad, Telangana</p>
+                    <p class="mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-phone text-warning me-2"></i> <a href="tel:9305865824">9305 865 824</a></p>
+                    <p style="font-size: 0.9rem;"><i class="fa-brands fa-whatsapp text-success me-2"></i> <a href="https://wa.me/919305865824" target="_blank">Chat On WhatsApp</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <p class="mb-0 opacity-50">&copy; 2026 Rohit Painting Contractors. All Rights Reserved. Created for Web Development Practice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript code for processing form and redirecting to Owner's WhatsApp -->
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById('clientName').value;
+            var phone = document.getElementById('clientPhone').value;
+            var address = document.getElementById('clientAddress').value;
+            var type = document.getElementById('workType').value;
+            
+            var whatsappNumber = "919305865824";
+            
+            var message = "*Rohit Painting Website - New Client Enquiry*%0A%0A" + 
+                          "*Name:* " + name + "%0A" +
+                          "*Phone:* " + phone + "%0A" +
+                          "*Address:* " + address + "%0A" +
+                          "*Work Required:* " + type;
+            
+            var url = "https://wa.me/" + whatsappNumber + "?text=" + message;
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
